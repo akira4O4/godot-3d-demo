@@ -1,0 +1,12 @@
+.godot/
+.vscode/
+.import/
+art/
+fonts/
+*.png
+*.jpg
+*.godot
+*.import
+*.sln
+*.csproj
+*.tres
