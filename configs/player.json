@@ -1,0 +1,7 @@
+{
+    "speed": 14,
+    "fall_acceleration": 75,
+    "jump_impulse": 20,
+    "bounce_impulse": 16,
+    "max_jumps": 2
+}
