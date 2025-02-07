@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfovx3cr8yin3"]
+[gd_scene load_steps=12 format=3 uid="uid://cfovx3cr8yin3"]
 
 [ext_resource type="Script" path="res://scripts/Main.cs" id="1_o7vo0"]
 [ext_resource type="PackedScene" uid="uid://dlfvgl4ol7437" path="res://scenes/player.tscn" id="1_xgf54"]
 [ext_resource type="PackedScene" uid="uid://1cb1a8pxws7a" path="res://scenes/mob.tscn" id="2_ljci8"]
 [ext_resource type="FontFile" uid="uid://c7e6gm5toaqe6" path="res://fonts/Montserrat-Medium.ttf" id="4_04uc3"]
 [ext_resource type="Script" path="res://scripts/ScoreLabel.cs" id="5_tmtbu"]
-[ext_resource type="Script" path="res://scripts/MobCount.cs" id="6_ewmun"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_djoc2"]
 size = Vector3(60, 2, 60)
@@ -127,16 +126,6 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press Enter to retry"
-
-[node name="MobCount" type="Label" parent="UserInferface"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 50.0
-offset_right = 106.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Mob: 0"
-script = ExtResource("6_ewmun")
 
 [connection signal="Hit" from="Player" to="." method="OnPlayerHit"]
 [connection signal="timeout" from="MobTimer" to="." method="OnMobTimerTimeout"]

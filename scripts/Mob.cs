@@ -46,6 +46,6 @@ public partial class Mob : CharacterBody3D
     {
         EmitSignal(SignalName.ScreenExited);
         QueueFree();
-        // GD.Print("Mob Exited Screen!");
+        GD.Print("Mob Exited Screen!");
     }
 }
