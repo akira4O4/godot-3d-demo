@@ -35,8 +35,8 @@ public partial class Main : Node3D
             mobSpawnLocation.ProgressRatio = GD.Randf();
             Vector3 playerPosition = GetNode<Player>("Player").Position;
 
-            mob.Initialize(mobSpawnLocation.Position, playerPosition);
             AddChild(mob);
+            mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
             mob.Squashed += GetNode<ScoreLabel>("UserInferface/ScoreLabel").OnMobSquashed;
             mob.Squashed += KillMob;

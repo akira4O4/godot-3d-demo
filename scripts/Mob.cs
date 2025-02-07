@@ -33,8 +33,16 @@ public partial class Mob : CharacterBody3D
         RotateY(randomAngle);
 
         int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+        GD.Print("min speed: ",MinSpeed);
+        GD.Print("max speed: ",MaxSpeed);
+        GD.Print("random speed: ",randomSpeed);
+
         Velocity = Vector3.Forward * randomSpeed;
         Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
+        
+        GD.Print("x:",Velocity.X) ;
+        GD.Print("y:",Velocity.Y); 
+        GD.Print("z:",Velocity.Z); 
     }
     public void Squash()
     {
