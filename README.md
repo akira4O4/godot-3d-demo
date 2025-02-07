@@ -7,5 +7,6 @@
 ---
 
 ## New Feat
+- Parameter Configuration
 - Double jumps
 - Max mob
