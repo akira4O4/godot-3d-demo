@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlfvgl4ol7437"]
+
+[ext_resource type="PackedScene" uid="uid://cbw3430e6npvs" path="res://art/player.glb" id="1_2fu5b"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_3txnx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_saeuk"]
+height = 0.770307
+radius = 0.927105
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_81wwj"]
+height = 0.401228
+radius = 1.2366
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+script = ExtResource("1_3txnx")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("1_2fu5b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175962, -0.0791825, -0.0615865)
+shape = SubResource("CylinderShape3D_saeuk")
+
+[node name="MobDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+shape = SubResource("CylinderShape3D_81wwj")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.451406)
+aabb = AABB(-1.16878, -1, -1.58277, 2.33756, 2, 3.16554)
+
+[connection signal="body_exited" from="MobDetector" to="." method="OnMobDetectorBodyEntered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="OnVisibilityNotifierScreenExited"]
